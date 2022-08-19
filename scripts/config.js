@@ -4,7 +4,7 @@ module.exports = {
     network : {
       // Specify 127.0.0.1 if you have TON OS SE instance running locally
       // see https://docs.ton.dev/86757ecb2/p/641c22-platforms for more info
-      endpoints : ["http://195.161.41.59"], // nodes to access the network
+      endpoints : ["127.0.0.1"], // nodes to access the network
       type : "test" // is this test or main network
     }
 }

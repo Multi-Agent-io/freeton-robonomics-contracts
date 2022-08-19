@@ -8,3 +8,10 @@ After cloning the repo, install with `npm install`.
 
 ## Interaction with contracts
 See scripts folder for interaction utilities.
+
+
+## Important note!!!
+Set everdev solidity compiler to 0.47.0 version by:
+```console
+everdev sol set --compiler 0.47.0
+```

@@ -1,12 +1,29 @@
 ## Compiling
-Run `./compile.sh` to compile Root.sol, XRT.sol and Lighthouse.sol and move all the artifacts to the corresponding folder.
+Run `./compile.sh` to compile Root.sol, XRT.sol, Lighthouse.sol, SimpleWallet.sol and MultiValidatorExample.sol.
 
-Also run `./compile.sh SimpleWallet` and `./compile.sh robonomics/validator/MultiValidatorExample` to compile additional contacts (you have to do it when working with test network).
 
 ## Configure
 All the interaction scripts read config parameters (e.g. which network to use) from config.js file. See it for more info.
 ### Giver config
 Deploying new contracts requires transfering some balance first. It is done requesting a giver to transfer this value -- see giverConfig.js, which exports one function get_tokens_from_giver. The present giver config contains default TON OS SE giver params -- when deploying in other network, you may want to deploy your own giver first or to use another logic in get_tokens_from_giver.
+
+
+## Installations bedore deploy
+For deploying in local node you must have docker, nodejs and npm installed.
+Install packages by
+```console
+npm i
+```
+And everdev globally
+```console
+npm i -g everdev
+```
+After that start local node by
+```console
+everdev se start
+```
+Note: make sure that docker engine started.
+
 
 ## (Re-)Deploying
 After compiling contracts, run `node newKeys.js` for for generating new keys (they also serve as nonce for contract addresses, so the new project version won't conflict with older versions which has been already deployed).
@@ -35,6 +52,7 @@ After balance refilled, you can register one or several providers with `node reg
 
 ## Using a provider
 Registered a provider, you can consume one quota with `node no_liabilities.js`, refill or withdraw stake, create and then finalize liability with the corresponding scripts. Also you may wait for the timeout and check charging fines mechanism with `node checkTimeout.js`, or test on-chain validator finalization (you have to edit createLiability script for this).
+
 
 # Demo
 You can use [demo](https://www.youtube.com/watch?v=ZvAqjMXXaHY) as a reference.
